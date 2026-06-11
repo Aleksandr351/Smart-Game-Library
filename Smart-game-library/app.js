@@ -31,5 +31,5 @@ for (let i = 0; i < games.length; i++) {
 }
 
 console.log(gameList);
-// 123123
+
 // 123123123
