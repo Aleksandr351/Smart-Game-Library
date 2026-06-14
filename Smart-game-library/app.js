@@ -25,19 +25,19 @@ const games = [
 const gameList = document.querySelector("#gameList");
 const input = document.querySelector("#searchInput");
 
-let renderCards = function () {
+let renderCards = function (gamesArray) {
 	gameList.innerHTML = "";
-	for (let i = 0; i < games.length; i++) {
+	for (let i = 0; i < gamesArray.length; i++) {
 	const article = document.createElement('article');
 	article.classList.add('game-card');
 	const gameTitle = document.createElement('h3');
-	gameTitle.textContent = games[i].title;
+	gameTitle.textContent = gamesArray[i].title;
 	const genre = document.createElement('p')
-	genre.textContent = "Жанр: " + games[i].genre;
+	genre.textContent = "Жанр: " + gamesArray[i].genre;
 	const year = document.createElement('p')
-	year.textContent = "Год: " + games[i].year;
+	year.textContent = "Год: " + gamesArray[i].year;
 	const rating = document.createElement('p')
-	rating.textContent = "Оценка: " + games[i].rating;
+	rating.textContent = "Оценка: " + gamesArray[i].rating;
 	article.append(gameTitle);
 	article.append(genre);
 	article.append(year);
@@ -46,10 +46,22 @@ let renderCards = function () {
 }
 };
 
-renderCards();
+renderCards(games);
 
-input.addEventListener('input', function() {
-	const text = input.value;
-	for ()
-});
-
+input.addEventListener('input', function () {
+	const textInput = input.value;
+	let filteredGames = [];
+	for (let i = 0; i < games.length; i++) {
+		if (games[i].title.toLowerCase().includes(textInput.toLowerCase())) {
+			filteredGames.push(games[i]);
+		}
+	}
+	if (filteredGames.length > 0) {
+		renderCards(filteredGames);
+	} else {
+		gameList.innerHTML = "";
+		const emptyMessage=document.createElement('p');
+		emptyMessage.textContent = "Игры не найдены";
+		gameList.append(emptyMessage);
+	}
+})
