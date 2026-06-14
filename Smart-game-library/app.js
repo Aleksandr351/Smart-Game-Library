@@ -23,13 +23,33 @@ const games = [
 ]
 
 const gameList = document.querySelector("#gameList");
+const input = document.querySelector("#searchInput");
 
-for (let i = 0; i < games.length; i++) {
+let renderCards = function () {
+	gameList.innerHTML = "";
+	for (let i = 0; i < games.length; i++) {
+	const article = document.createElement('article');
+	article.classList.add('game-card');
 	const gameTitle = document.createElement('h3');
 	gameTitle.textContent = games[i].title;
-	gameList.append(gameTitle);
+	const genre = document.createElement('p')
+	genre.textContent = "Жанр: " + games[i].genre;
+	const year = document.createElement('p')
+	year.textContent = "Год: " + games[i].year;
+	const rating = document.createElement('p')
+	rating.textContent = "Оценка: " + games[i].rating;
+	article.append(gameTitle);
+	article.append(genre);
+	article.append(year);
+	article.append(rating);
+	gameList.append(article);
 }
+};
 
-console.log(gameList);
+renderCards();
 
-// 123123123
+input.addEventListener('input', function() {
+	const text = input.value;
+	for ()
+});
+
