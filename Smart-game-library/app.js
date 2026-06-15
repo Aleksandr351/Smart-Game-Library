@@ -27,7 +27,13 @@ input.addEventListener('input', function () {
 
 select.addEventListener('change', function () {
 	let filteredGames = [];
-	if 
-})
+
+	for (let i = 0; i < games.length; i++) {
+		if (select.value === 'all' || select.value === games[i].genre) {
+			filteredGames.push(games[i]);
+		}
+	}
+	renderCards(filteredGames, gameList);
+});
 
 renderCards(games, gameList);
