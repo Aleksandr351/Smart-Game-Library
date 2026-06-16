@@ -8,32 +8,42 @@ const select = document.querySelector("#genreFilter");
 
 
 input.addEventListener('input', function () {
-	const textInput = input.value;
+	applyFilters();
+})
+
+select.addEventListener('change', function () {
+	applyFilters();
+});
+
+
+function applyFilters() {
+
+	const searchText = input.value.toLowerCase();
+	const selectedGenre = select.value;
+
 	let filteredGames = [];
+
 	for (let i = 0; i < games.length; i++) {
-		if (games[i].title.toLowerCase().includes(textInput.toLowerCase())) {
+		const gameTitle = games[i].title.toLowerCase();
+		const gameGenre = games[i].genre;
+
+		const isTitleMatch = gameTitle.includes(searchText);
+		const isGenreMatch = selectedGenre === 'all' || gameGenre === selectedGenre;
+
+		if (isTitleMatch && isGenreMatch) {
 			filteredGames.push(games[i]);
 		}
 	}
+
 	if (filteredGames.length > 0) {
 		renderCards(filteredGames, gameList);
 	} else {
 		gameList.innerHTML = "";
-		const emptyMessage=document.createElement('p');
-		emptyMessage.textContent = "Игры не найдены";
+
+		const emptyMessage = document.createElement('p');
+		emptyMessage.textContent = 'Игры не найдены';
+
 		gameList.append(emptyMessage);
-	}
-})
-
-select.addEventListener('change', function () {
-	let filteredGames = [];
-
-	for (let i = 0; i < games.length; i++) {
-		if (select.value === 'all' || select.value === games[i].genre) {
-			filteredGames.push(games[i]);
-		}
-	}
-	renderCards(filteredGames, gameList);
-});
+}}
 
 renderCards(games, gameList);
