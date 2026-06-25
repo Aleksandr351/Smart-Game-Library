@@ -4,7 +4,11 @@ export const games = [
 		title: 'The Witcher 3',
 		genre: 'RPG',
 		year: 2015,
-		rating: 9.5
+		rating: 9.5,
+		platform: 'PC',
+		status: 'Пройдено',
+		hours: 120,
+		description: 'Большая RPG с открытым миром'
 	},
 	{
 		id: 2,
@@ -12,6 +16,10 @@ export const games = [
 		genre: 'RPG',
 		year: 2020,
 		rating: 8.7
+		platform: 'PC',
+		status: 'Играю',
+		hours: 70,
+		description: 'RPG в киберпанк-городе'
 	},
 	{
 		id: 3,
@@ -19,5 +27,9 @@ export const games = [
 		genre: 'Action',
 		year: 2018,
 		rating: 9.7
+		platform: 'PC',
+		status: 'В планах',
+		hours: 0,
+		description: 'Приключенческий экшен про Дикий Запад'
 	}
 ]
