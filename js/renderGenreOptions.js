@@ -19,8 +19,10 @@ export function renderGenreOptions (games, select) {
 
 	for (let j = 0; j < filteredGenres.length; j++) {
 		const option = document.createElement('option');
+
 		option.value = filteredGenres[j]
 		option.textContent = filteredGenres[j];
+		
 		select.append(option);
 	}
 
