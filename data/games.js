@@ -7,7 +7,7 @@ export const games = [
 		rating: 9.5,
 		platform: 'PC',
 		status: 'Пройдено',
-		hours: 120,
+		playTime: 120,
 		description: 'Большая RPG с открытым миром'
 	},
 	{
@@ -15,10 +15,10 @@ export const games = [
 		title: 'Cyberpunk 2077',
 		genre: 'RPG',
 		year: 2020,
-		rating: 8.7
+		rating: 8.7,
 		platform: 'PC',
 		status: 'Играю',
-		hours: 70,
+		playTime: 70,
 		description: 'RPG в киберпанк-городе'
 	},
 	{
@@ -26,10 +26,10 @@ export const games = [
 		title: 'Red Dead Redemeption 2',
 		genre: 'Action',
 		year: 2018,
-		rating: 9.7
+		rating: 9.7,
 		platform: 'PC',
 		status: 'В планах',
-		hours: 0,
+		playTime: 0,
 		description: 'Приключенческий экшен про Дикий Запад'
 	}
 ]
