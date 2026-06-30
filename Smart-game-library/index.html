@@ -13,16 +13,15 @@
 	</header>
 
 	<main>
-		<form id="searchForm">
-			<input type="text" id="searchInput" placeholder="Найти игру">
+		<div class="filters">
+		<form id="searchForm" class="filters__form">
+			<input type="text" id="searchInput" placeholder="Найти игру" class="filters__input">
 		</form>
 
-		<select name="" id="genreFilter">
-			
-		</select>
 
-		<select name="" id="statusFilter"></select>
-
+		<select name="" id="genreFilter" class="filters__select"></select>
+		<select name="" id="statusFilter" class="filters__select"></select>
+	</div>
 		<section>
 			<h2>Мои игры</h2>
 			<div id="gameList">

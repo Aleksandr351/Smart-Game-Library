@@ -29,3 +29,27 @@ main {
 	border-radius: 5%;
 	border: 1px solid rgb(109, 116, 120);
 }
+
+.filters {
+	display: flex;
+	gap: 12px;
+	margin-bottom: 30px;
+}
+
+.filters__form {
+	margin: 0;
+}
+
+.filters__input,
+.filters__select {
+	padding: 10px;
+	border-radius: 8px;
+	border: 1px solid rgb(109, 116, 120);
+	background-color: rgb(36, 33, 33);
+	color: white;
+	font-size: 16px;
+}
+
+.filters__input {
+	min-width: 260px;
+}
