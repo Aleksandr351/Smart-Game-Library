@@ -24,8 +24,6 @@ statusSelect.addEventListener('change', function(){
 })
 
 
-
-
 renderStatusOptions(games, statusSelect);
 renderGenreOptions(games, select);
 renderCards(games, gameList);

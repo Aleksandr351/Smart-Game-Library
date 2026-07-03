@@ -28,7 +28,7 @@ export const games = [
 		year: 2018,
 		rating: 9.7,
 		platform: 'PC',
-		status: 'В планах',
+		status: 'Не пройдено',
 		playTime: 0,
 		description: 'Приключенческий экшен про Дикий Запад'
 	}
