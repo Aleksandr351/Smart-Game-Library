@@ -1,9 +1,11 @@
 import { renderCards } from "./renderCards.js";
-export function applyFilters(games, input, select, statusSelect, gameList) {
+import { sortGames } from "./sortGames.js";
+export function applyFilters(games, input, genreSelect, statusSelect,sortSelect, gameList) {
 
 	const searchText = input.value.toLowerCase();
-	const selectedGenre = select.value;
+	const selectedGenre = genreSelect.value;
 	const selectedStatus = statusSelect.value;
+	const selectedSort = sortSelect.value;
 
 	let filteredGames = [];
 
@@ -21,8 +23,13 @@ export function applyFilters(games, input, select, statusSelect, gameList) {
 		}
 	}
 
-	if (filteredGames.length > 0) {
-		renderCards(filteredGames, gameList);
+	sortGames(filteredGames, selectedSort);
+	renderGamesResult(filteredGames, gameList);
+}
+
+function renderGamesResult (gamesArray, gameList) {
+	if (gamesArray.length > 0) {
+		renderCards(gamesArray, gameList);
 	} else {
 		gameList.innerHTML = "";
 
