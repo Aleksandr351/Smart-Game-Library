@@ -1,7 +1,6 @@
 import { games } from "../data/games.js";
 import { applyFilters } from "../js/filterGames.js";
-import { renderGenreOptions } from "../js/renderGenreOptions.js";
-import { renderStatusOptions } from "../js/renderStatusOptions.js";
+import { renderSelectOptions } from "../js/renderSelectOptions.js";
 
 const gameList = document.querySelector("#gameList");
 const input = document.querySelector("#searchInput");
@@ -18,7 +17,6 @@ genreSelect.addEventListener('change', 	updateGames);
 statusSelect.addEventListener('change', 	updateGames);
 sortSelect.addEventListener('change', 	updateGames);
 
-
-renderStatusOptions(games, statusSelect);
-renderGenreOptions(games, genreSelect);
+renderSelectOptions(games, genreSelect, 'genre', 'Все жанры');
+renderSelectOptions(games, statusSelect, 'status', 'Все статусы');
 updateGames();
