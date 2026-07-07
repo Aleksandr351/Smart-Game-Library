@@ -74,6 +74,12 @@ main {
 	background-color: rgb(123, 34, 34);
 }
 
+.games-count {
+	margin: 0 0 20px;
+	color: rgb(180, 180, 180);;
+	font-size: 16px;
+}
+
 .filters {
 	display: flex;
 	gap: 12px;
