@@ -92,7 +92,8 @@ main {
 }
 
 .filters__input,
-.filters__select {
+.filters__select,
+.filters__button {
 	padding: 10px;
 	border-radius: 8px;
 	border: 1px solid rgb(109, 116, 120);
@@ -104,6 +105,29 @@ main {
 .filters__input {
 	min-width: 260px;
 }
+
+.filters__button,
+.filters__select {
+  cursor: pointer;
+}
+
+.filters__select:hover,
+.filters__button:hover {
+	border-color: rgb(150, 150, 150);
+}
+
+.filters__button:hover {
+	background-color: rgb(50, 47, 47);
+}
+
+.filters__button:active {
+	transform: translateY(1px);
+}
+
+.filters__button {
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
 
 @media (max-width: 768px) {
 	.filters {
