@@ -7,21 +7,18 @@ export function applyFilters(games, input, genreSelect, statusSelect,sortSelect,
 	const selectedStatus = statusSelect.value;
 	const selectedSort = sortSelect.value;
 
-	let filteredGames = [];
-
-	for (let i = 0; i < games.length; i++) {
-		const gameTitle = games[i].title.toLowerCase();
-		const gameGenre = games[i].genre;
-		const gameStatus = games[i].status;
+	const filteredGames = games.filter(function (game) {
+		
+		const gameTitle = game.title.toLowerCase();
+		const gameGenre = game.genre;
+		const gameStatus = game.status;
 
 		const isTitleMatch = gameTitle.includes(searchText);
 		const isGenreMatch = selectedGenre === 'all' || gameGenre === selectedGenre;
 		const isStatusMatch = selectedStatus === 'all' || gameStatus === selectedStatus;
 
-		if (isTitleMatch && isGenreMatch && isStatusMatch) {
-			filteredGames.push(games[i]);
-		}
-	}
+		return isTitleMatch && isGenreMatch && isStatusMatch;
+	})
 
 	sortGames(filteredGames, selectedSort);
 	renderGamesResult(filteredGames, gameList);
