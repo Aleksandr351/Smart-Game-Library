@@ -7,9 +7,10 @@ const input = document.querySelector("#searchInput");
 const genreSelect = document.querySelector("#genreFilter");
 const statusSelect = document.querySelector("#statusFilter");
 const sortSelect = document.querySelector("#sortSelect");
+const gamesCount = document.querySelector('#gamesCount');
 
 function updateGames() {
-	applyFilters(games, input, genreSelect, statusSelect,sortSelect, gameList);
+	applyFilters(games, input, genreSelect, statusSelect,sortSelect, gamesCount, gameList);
 }
 
 input.addEventListener('input', 	updateGames);

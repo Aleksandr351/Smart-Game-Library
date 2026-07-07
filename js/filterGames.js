@@ -1,6 +1,6 @@
 import { renderCards } from "./renderCards.js";
 import { sortGames } from "./sortGames.js";
-export function applyFilters(games, input, genreSelect, statusSelect,sortSelect, gameList) {
+export function applyFilters(games, input, genreSelect, statusSelect,sortSelect, gamesCount, gameList) {
 
 	const searchText = input.value.toLowerCase();
 	const selectedGenre = genreSelect.value;
@@ -8,7 +8,7 @@ export function applyFilters(games, input, genreSelect, statusSelect,sortSelect,
 	const selectedSort = sortSelect.value;
 
 	const filteredGames = games.filter(function (game) {
-		
+
 		const gameTitle = game.title.toLowerCase();
 		const gameGenre = game.genre;
 		const gameStatus = game.status;
@@ -21,6 +21,7 @@ export function applyFilters(games, input, genreSelect, statusSelect,sortSelect,
 	})
 
 	sortGames(filteredGames, selectedSort);
+	gamesCount.textContent = 'Найдено игр: ' + filteredGames.length;
 	renderGamesResult(filteredGames, gameList);
 }
 
